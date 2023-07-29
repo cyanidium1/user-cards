@@ -1,0 +1,17 @@
+.nav {
+  background-color: #e6d5a9;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.item {
+  background-color: #afbea2;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  color: #fff;
+  text-decoration: none;
+}
+.item:active {
+  background-color: #ffbe74;
+}

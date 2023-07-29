@@ -1,0 +1,59 @@
+:root {
+  --width: 380px;
+}
+
+.container {
+  margin: 20px;
+  box-sizing: border-box;
+  width: var(--width);
+  height: 460px;
+  background: linear-gradient(
+    114.99deg,
+    #471ca9 -0.99%,
+    #5736a3 54.28%,
+    #4b2a99 78.99%
+  );
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.goitLogo {
+  position: absolute;
+  left: 20px;
+}
+.userBlock {
+  height: 80px;
+  position: relative;
+  width: var(--width);
+}
+.line {
+  position: absolute;
+  top: calc(80px / 2 - 10px / 2);
+  height: 10px;
+  width: 100%;
+  background: rgba(235, 216, 255, 1);
+  box-shadow: 0px 3.4369285106658936px 2.5776965618133545px 0px
+      rgba(251, 248, 255, 1) inset,
+    0px 3.4369285106658936px 3.4369285106658936px 0px rgba(0, 0, 0, 0.06),
+    0px -1.7184642553329468px 3.4369285106658936px 0px rgba(174, 123, 227, 1) inset;
+}
+.userPicture {
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+  position: absolute;
+  left: calc(var(--width) / 2 - 54px / 2);
+  top: 7px;
+}
+.frame {
+  position: absolute;
+  left: calc(var(--width) / 2 - 80px / 2);
+}
+
+.text {
+  text-transform: uppercase;
+}
