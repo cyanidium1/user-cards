@@ -9,3 +9,8 @@
   display: flex;
   justify-content: center;
 }
+.filter {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import s from './Follow.module.css';
 
-const Follow = ({ text, action }) => {
-  const [isFollowed, changeFollowed] = useState(false);
+const Follow = ({ isFollowed, action }) => {
   return (
     <button
       className={isFollowed ? s.followed : s.notFollowed}
-      onClick={() => changeFollowed(!isFollowed)}
+      onClick={() => action()}
     >
       {isFollowed ? 'Followed' : 'Follow'}
     </button>

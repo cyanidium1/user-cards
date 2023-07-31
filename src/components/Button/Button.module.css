@@ -12,3 +12,14 @@
 .btn:hover {
   background-color: #b2cfc4;
 }
+.btnActive {
+  width: 196px;
+  height: 50px;
+  background-color: #ff9419;
+  border-radius: 10px;
+  border: 0px;
+  cursor: pointer;
+  color: rgba(55, 55, 55, 1);
+  text-transform: uppercase;
+  transition: 0.5s;
+}

@@ -6,13 +6,13 @@ import userPicture from '../../images/Boy.png';
 import Follow from 'components/Follow/Follow';
 import frame from '../../images/frame.svg';
 
-const User = ({ info }) => {
+const User = ({ info, isFollowed, onClick }) => {
   const avatar = info.avatar ? info.avatar : userPicture;
 
   const { followers, tweets } = info;
 
   const handleClick = () => {
-    console.log('clicked!');
+    onClick(info.id);
   };
 
   return (
@@ -27,7 +27,7 @@ const User = ({ info }) => {
 
       <p className={s.text}>{tweets} tweets</p>
       <p className={s.text}>{followers.toLocaleString()} followers</p>
-      <Follow text="Follow" action={handleClick} />
+      <Follow text="Follow" action={handleClick} isFollowed={isFollowed} />
     </div>
   );
 };
