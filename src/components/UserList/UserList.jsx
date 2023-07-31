@@ -3,11 +3,11 @@ import User from 'components/User/User';
 import s from './UserList.module.css';
 import axios from 'axios';
 import Button from 'components/Button/Button';
+import DropdownMenu from 'components/DropdownMenu/DropdownMenu';
 
 const UserList = () => {
   const [data, updData] = useState([]);
   const [filteredArray, updFiltered] = useState(data);
-  const [filterBtn, updFilterBtn] = useState(1);
 
   const [numOfCards, setNumOfCards] = useState(3);
   const [follows, setFollows] = useState(
@@ -39,17 +39,14 @@ const UserList = () => {
 
   const showOpt = num => {
     switch (num) {
-      case 1:
+      case '1':
         updFiltered(data);
-        updFilterBtn(1);
         break;
-      case 2:
+      case '2':
         updFiltered(data.filter(el => follows.includes(el.id)));
-        updFilterBtn(2);
         break;
-      case 3:
+      case '3':
         updFiltered(data.filter(el => !follows.includes(el.id)));
-        updFilterBtn(3);
         break;
       default:
         break;
@@ -58,26 +55,7 @@ const UserList = () => {
 
   return (
     <>
-      <div className={s.filter}>
-        <Button
-          onClick={showOpt}
-          text={'All'}
-          num={1}
-          isActive={filterBtn === 1}
-        />
-        <Button
-          onClick={showOpt}
-          text={'Followed'}
-          num={2}
-          isActive={filterBtn === 2}
-        />
-        <Button
-          onClick={showOpt}
-          text={'Not followed'}
-          num={3}
-          isActive={filterBtn === 3}
-        />
-      </div>
+      <DropdownMenu showOpt={showOpt} />
       <ul className={s.container}>
         {filteredArray.slice(0, numOfCards).map(el => (
           <li key={el.id}>

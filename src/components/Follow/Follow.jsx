@@ -7,7 +7,7 @@ const Follow = ({ isFollowed, action }) => {
       className={isFollowed ? s.followed : s.notFollowed}
       onClick={() => action()}
     >
-      {isFollowed ? 'Followed' : 'Follow'}
+      {isFollowed ? 'Following' : 'Follow'}
     </button>
   );
 };
