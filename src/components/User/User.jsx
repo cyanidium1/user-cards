@@ -26,7 +26,12 @@ const User = ({ info, isFollowed, onClick }) => {
       </div>
 
       <p className={s.text}>{tweets} tweets</p>
-      <p className={s.text}>{followers.toLocaleString()} followers</p>
+      <p className={s.text}>
+        {isFollowed
+          ? (followers + 1).toLocaleString()
+          : followers.toLocaleString()}{' '}
+        followers
+      </p>
       <Follow text="Follow" action={handleClick} isFollowed={isFollowed} />
     </div>
   );
